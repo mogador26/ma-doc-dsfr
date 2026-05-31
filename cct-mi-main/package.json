@@ -1,0 +1,26 @@
+{
+  "name": "cct-mi",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/run.mjs dev",
+    "build": "node scripts/build.mjs",
+    "preview": "node scripts/run.mjs preview",
+    "pdf:validate": "node scripts/validate-pdf-order.mjs",
+    "pdf": "npm run pdf:validate && node scripts/generate-pdfs.mjs",
+    "build:site": "vitepress build docs",
+    "build:public": "CCT_MODE=public node scripts/build.mjs",
+    "build:interne": "CCT_MODE=interne node scripts/build.mjs",
+    "dev:public": "CCT_MODE=public node scripts/run.mjs dev",
+    "dev:interne": "CCT_MODE=interne node scripts/run.mjs dev"
+  },
+  "dependencies": {
+    "@gouvfr/dsfr": "^1.13.0",
+    "@gouvminint/vue-dsfr": "^8.11.0",
+    "markdown-it": "^14.1.1",
+    "playwright": "^1.49.0",
+    "vitepress": "^1.3.1",
+    "vue": "^3.5.0"
+  },
+  "version": "1.0.0"
+}

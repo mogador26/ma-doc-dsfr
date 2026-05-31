@@ -1,0 +1,24 @@
+/**
+* Style : précédent CCT
+*------------------------------------------------------------------------------*/
+:root {
+
+table {width: 100%; table-layout: fixed; border: 1px solid black; border-collapse: collapse;}
+td {word-wrap: break-word; border: 1px solid black; }
+
+.statut_R {background-color: #93F7A2;}
+.statut_A {background-color: #ECAAFD;}
+.statut_M {background-color: #F7F493;}
+.statut_O {background-color: #ECAAAA;}
+.new_open {color: green; font-weight: bold;}
+.maj_open {color: blue; font-weight: bold;}
+.del_open {color: red; font-weight: bold;}
+.inc_open {font-weight: bold;}
+.new_nonopen {color: green; font-weight: normal;}
+.maj_nonopen {color: blue; font-weight: normal;}
+.del_nonopen {color: red; font-weight: normal;}
+.inc_nonopen {font-weight: normal;}
+.comm_italic {font-style: italic;}
+.comm_comp_tit {color: orange; text-decoration: underline;}
+.comm_comp {color: orange;}
+}

@@ -1,0 +1,37 @@
+default:
+  tags:
+    - shared
+    - region1
+variables:
+  registry_url: nexus.forge-dc.cloudmi.minint.fr
+  proxy_host: pio.service.consul
+  proxy_port: 3128
+  http_proxy: http://${proxy_host}:${proxy_port}
+  https_proxy: http://${proxy_host}:${proxy_port}
+  no_proxy: localhost,.pi2.minint.fr
+  GIT_SSL_NO_VERIFY: "true"
+image: ${registry_url}/node:20
+pages:
+  cache:
+    paths:
+      - node_modules/
+  script:
+    # - apk add git # Uncomment this if you're using small docker images like alpine and have lastUpdated enabled
+    - git --no-pager log --oneline -n 0
+    - apt-get update
+    - npm install @playwright/test
+    - npx playwright install
+    - npx playwright install-deps
+    - npm install
+    - npm run pdf
+    - npm run build
+    - rm -rf public
+    - mkdir -p public
+    - ls -lR .docs-build/dist-site
+    - cp -pR  .docs-build/dist-site/* public/
+
+  artifacts:
+    paths:
+      - public
+  only:
+    - dev
