@@ -1,0 +1,10 @@
+[project]
+name = "ma-doc-dsfr"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "mkdocs-dsfr>=0.24.0",
+    "mkdocs-open-in-new-tab>=1.0.8",
+]

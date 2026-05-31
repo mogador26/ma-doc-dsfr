@@ -1,0 +1,51 @@
+site_name: cadre de cohérence technique
+nav:
+- Accueil: index.md
+- Guide: guide-cct-dans-la-commande-publique/index.md
+- Annexes: annexes/index.md
+theme:
+  name: dsfr
+  locale: fr
+  libelle_bouton_editer: Modifier
+  intitule: "Ministère <br> de l'intérieur"
+  bouton_hautdepage: right
+  afficher_menu_lateral: true
+  afficher_sommaire: false
+  afficher_date_de_revision: true
+  header:
+    titre: Cadre de cohérence technique
+    sous_titre: ministère de l'intérieur
+    search: true
+  menu_lateral:
+    actif: true
+  footer:
+    description: "DTNUM -MI"
+
+plugins:
+- search:
+    lang: fr
+- open-in-new-tab
+- tags_index
+- rss
+- git-revision-date-localized:
+    fallback_to_build_date: false
+- dsfr_base
+
+markdown_extensions:
+- dsfr_structure.extension.all_extensions
+- pymdownx.snippets
+- pymdownx.highlight:
+    use_pygments: true
+- pymdownx.emoji:
+    options:
+      attributes:
+        align: absmiddle
+        height: 20px
+        width: 20px
+- pymdownx.superfences
+- toc:
+    permalink: false
+    toc_depth: 2
+- attr_list
+- def_list
+- tables
